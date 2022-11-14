@@ -43,6 +43,7 @@ export class LoginScriptProcessor extends SessionMiddleware {
 
     feedFromSession (data: Buffer): void {
         const dataString = data.toString()
+        this.logger.info('Session data:', dataString)
 
         for (const script of this.remainingScripts) {
             if (!script.expect) {
